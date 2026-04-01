@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation UML </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-background"></div>
+
+    <div class="slides-wrapper">
+        
+        <section class="slide active" id="slide-1">
+            <div class="glass-card center-card anim-fade">
+                <h1>Diagramme de Composants et Communication</h1>
+                <p class="subtitle">Une approche UML pour la modélisation logicielle</p>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-2">
+            <div class="container split-layout">
+                <div class="content-left anim-left">
+                    <h2>Introduction</h2>
+                    <p class="label-grey">Qu'est ce que l'UML ?</p>
+                    <div class="blue-quote">
+                        <strong>UML = Langage de Modélisation Unifié</strong>
+                    </div>
+                    <p class="description">Un langage visuel pour représenter, concevoir et documenter des systèmes logiciels.</p>
+                    <p class="focus-title">Dans cet exposé, nous allons nous concentrer sur :</p>
+                    <ul class="custom-list">
+                        <li>Le diagramme de composants</li>
+                        <li>Le diagramme de communication</li>
+                    </ul>
+                </div>
+                <div class="content-right anim-fade">
+                    <div class="image-frame">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Collaboration">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-3">
+            <div class="plan-container anim-up">
+                <div class="glass-card full-width">
+                    <h2 class="center">Plan de la Présentation</h2>
+                    <div class="plan-grid">
+                        <div class="plan-item">
+                            <span class="step-num">1.</span> Utilisation des diagrammes
+                        </div>
+                        <div class="plan-item">
+                            <span class="step-num">2.</span> Structure des diagrammes
+                        </div>
+                        <div class="plan-item">
+                            <span class="step-num">3.</span> Étude de cas pratique
+                        </div>
+                        <div class="plan-item">
+                            <span class="step-num">4.</span> Conclusion
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="slide" id="slide-4">
+            <div class="container usage-layout">
+                <div class="header-usage">
+                    <h2>Utilisation</h2>
+                    <span class="badge badge-green">Diagramme de Composants</span>
+                </div>
+                <div class="grid-2-cols">
+                    <div class="glass-card">
+                        <h3>Objectifs 🎯</h3>
+                        <ul class="check-list blue-bullets">
+                            <li>Définir les aspects exécutables et réutilisables d'un système.</li>
+                            <li>Identifier les problèmes de configuration via les interfaces.</li>
+                            <li>Représentation précise du système avant modifications.</li>
+                            <li>Planifier les modules d'un nouveau projet.</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <h3>Exemple Pratique 🏫</h3>
+                        <p>Dans une application de gestion d'école, on peut avoir :</p>
+                        <ul class="check-list dots-bullets">
+                            <li>Un composant pour la <strong>Gestion des étudiants</strong>.</li>
+                            <li>Un composant pour la <strong>Gestion des notes</strong>.</li>
+                            <li>Un composant pour les <strong>Emplois du temps</strong>.</li>
+                        </ul>
+                        <p class="mt-10">Chaque module fonctionne indépendamment mais communique via des interfaces.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-5">
+            <div class="container usage-layout">
+                <div class="header-usage">
+                    <h2>Utilisation</h2>
+                    <span class="badge badge-red">Diagramme de Communication</span>
+                </div>
+                <div class="grid-2-cols">
+                    <div class="glass-card">
+                        <h3>Objectifs 🎯</h3>
+                        <ul class="check-list red-bullets">
+                            <li>Décrire le comportement dynamique du système.</li>
+                            <li>Visualiser le flux des messages entre les objets.</li>
+                            <li>Vérifier si le système peut réaliser une fonctionnalité spécifique.</li>
+                            <li>Identifier les méthodes nécessaires pour chaque classe.</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <h3>Applications 📱</h3>
+                        <p>Il est utilisé pour modéliser des interactions complexes où l'ordre des messages est crucial.</p>
+                        <p class="mt-10">Contrairement au diagramme de séquence, il met l'accent sur l'organisation des objets plutôt que sur le temps.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-6">
+            <div class="container structure-layout">
+                <h2>Structure : Composants 🏗️</h2>
+                <p class="subtitle-structure">Les éléments principaux qui constituent le diagramme :</p>
+                
+                <div class="grid-3-cols">
+                    <div class="element-box">
+                        <div class="icon-circle bg-blue"><i class="fas fa-cube"></i></div>
+                        <h4>Composant</h4>
+                        <p>Unité autonome du système.</p>
+                    </div>
+                    <div class="element-box">
+                        <div class="icon-circle bg-green"><i class="fas fa-sign-in-alt"></i></div>
+                        <h4>Interface Fournie</h4>
+                        <p>Services offerts par le composant.</p>
+                    </div>
+                    <div class="element-box">
+                        <div class="icon-circle bg-orange"><i class="fas fa-sign-out-alt"></i></div>
+                        <h4>Interface Requise</h4>
+                        <p>Services nécessaires au composant.</p>
+                    </div>
+                    <div class="element-box">
+                        <div class="icon-circle bg-purple"><i class="fas fa-link"></i></div>
+                        <h4>Connecteur</h4>
+                        <p>Lien entre deux composants.</p>
+                    </div>
+                    <div class="element-box">
+                        <div class="icon-circle bg-red"><i class="fas fa-door-open"></i></div>
+                        <h4>Port</h4>
+                        <p>Point d'interaction du composant.</p>
+                    </div>
+                    <div class="element-box">
+                        <div class="icon-circle bg-yellow"><i class="fas fa-long-arrow-alt-right"></i></div>
+                        <h4>Dépendance</h4>
+                        <p>Relation entre éléments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="slide" id="slide-7">
+            <div class="container structure-layout">
+                <h2>Structure : Communication 💬</h2>
+                <p class="subtitle-structure">Les composants de base pour illustrer les interactions :</p>
+                
+                <div class="grid-2-cols mt-20">
+                    <div class="glass-card">
+                        <h3>Objets et Liens</h3>
+                        <div class="uml-object-box">
+                            <u>Utilisateur : Client</u>
+                        </div>
+                        <p class="mt-10">Les rectangles représentent les objets (instances de classes) et les lignes les chemins de communication.</p>
+                    </div>
+                    <div class="glass-card">
+                        <h3>Messages et Séquences</h3>
+                        <div class="message-example">
+                            <span class="msg-arrow">1.2 : verifierStock() ➔</span>
+                        </div>
+                        <p class="mt-10">Les messages sont numérotés pour indiquer l'ordre chronologique des appels.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-8">
+            <div class="container case-study-layout">
+                <div class="header-usage">
+                    <h2>Étude de Cas</h2>
+                    <span class="badge badge-gold">Système de Commande en Ligne 🛒</span>
+                </div>
+                
+                <div class="glass-card full-width">
+                    <h3>Le processus métier :</h3>
+                    <div class="process-steps">
+                        <div class="step-item">
+                            <div class="step-circle">1</div>
+                            <p>Le client passe une commande via l'interface web.</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-circle">2</div>
+                            <p>Le système vérifie la disponibilité dans le stock.</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-circle">3</div>
+                            <p>Le paiement est traité par un service externe.</p>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-circle">4</div>
+                            <p>Une confirmation est envoyée au client par email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-9">
+            <div class="container column-layout">
+                <div class="header-usage">
+                    <h2>Étude de Cas</h2>
+                    <span class="badge badge-cyan">Diagramme de Composants 🏗️</span>
+                </div>
+                
+                <div class="diagram-grid-layout">
+                    <div class="diag-row anim-fade">
+                        <div class="diag-num">1</div>
+                        <div class="diag-body">
+                            <h4>Interface Web</h4>
+                            <p class="action-text">Fournit</p>
+                            <p class="desc-text">L'interface utilisateur pour naviguer et passer la commande.</p>
+                        </div>
+                    </div>
+                    <div class="diag-row anim-fade">
+                        <div class="diag-num">2</div>
+                        <div class="diag-body">
+                            <h4>Gestion des Commandes</h4>
+                            <p class="action-text">Traite</p>
+                            <p class="desc-text">Le cœur du système qui coordonne les actions de vente.</p>
+                        </div>
+                    </div>
+                    <div class="diag-row anim-fade">
+                        <div class="diag-num">3</div>
+                        <div class="diag-body">
+                            <h4>Gestion du Stock</h4>
+                            <p class="action-text">Vérifie</p>
+                            <p class="desc-text">Interagit avec la base de données pour la disponibilité.</p>
+                        </div>
+                    </div>
+                    <div class="diag-row anim-fade">
+                        <div class="diag-num">4</div>
+                        <div class="diag-body">
+                            <h4>Service de Paiement</h4>
+                            <p class="action-text">Sécurise</p>
+                            <p class="desc-text">Module externe pour valider les transactions financières.</p>
+                        </div>
+                    </div>
+                    <div class="diag-row anim-fade full-row">
+                        <div class="diag-num">5</div>
+                        <div class="diag-body">
+                            <h4>Notification</h4>
+                            <p class="action-text">Envoie</p>
+                            <p class="desc-text">Gère l'envoi automatique de l'email de confirmation au client.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="slide" id="slide-10">
+            <div class="container column-layout">
+                <div class="header-usage">
+                    <h2>Étude de Cas</h2>
+                    <span class="badge badge-red">Diagramme de Communication 💬</span>
+                </div>
+                
+                <div class="scrollable-content-diag">
+                    <div class="diagram-grid-layout">
+                        <div class="diag-row anim-fade">
+                            <div class="diag-num red-bg">1</div>
+                            <div class="diag-body">
+                                <h4>Client vers Interface Web</h4>
+                                <p class="action-text red-txt">1 : SaisirCommande(produit)</p>
+                                <p class="desc-text">L'utilisateur initie l'action via le navigateur.</p>
+                            </div>
+                        </div>
+                        <div class="diag-row anim-fade">
+                            <div class="diag-num red-bg">2</div>
+                            <div class="diag-body">
+                                <h4>Interface vers Gestionnaire</h4>
+                                <p class="action-text red-txt">2 : CreerCommande(produit)</p>
+                                <p class="desc-text">Transmission des données au cœur logistique.</p>
+                            </div>
+                        </div>
+                        <div class="diag-row anim-fade">
+                            <div class="diag-num red-bg">3</div>
+                            <div class="diag-body">
+                                <h4>Gestionnaire vers Stock</h4>
+                                <p class="action-text red-txt">3 : VerifierStock(produit)</p>
+                                <p class="desc-text">Requête de disponibilité de l'article.</p>
+                            </div>
+                        </div>
+                        <div class="diag-row anim-fade">
+                            <div class="diag-num red-bg">4</div>
+                            <div class="diag-body">
+                                <h4>Gestionnaire vers Paiement</h4>
+                                <p class="action-text red-txt">4 : TraiterPaiement(montant)</p>
+                                <p class="desc-text">Appel au service bancaire sécurisé.</p>
+                            </div>
+                        </div>
+                        <div class="diag-row anim-fade">
+                            <div class="diag-num red-bg">5</div>
+                            <div class="diag-body">
+                                <h4>Gestionnaire vers Notification</h4>
+                                <p class="action-text red-txt">5 : EnvoyerConfirmation()</p>
+                                <p class="desc-text">Demande de création de l'email.</p>
+                            </div>
+                        </div>
+                        <div class="diag-row anim-fade">
+                            <div class="diag-num red-bg">6</div>
+                            <div class="diag-body">
+                                <h4>Notification vers Client</h4>
+                                <p class="action-text red-txt">6 : EnvoyerEmail()</p>
+                                <p class="desc-text">L'email de confirmation arrive chez le client.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="final-scroll-note mt-20">La numérotation séquentielle montre clairement l'ordre d'exécution.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-11">
+            <div class="container vertical conclusion-layout anim-up">
+                <div class="glass-card full-width">
+                    <h2 class="center">Conclusion 🏁</h2>
+                    <div class="conclusion-grid">
+                        <div class="concl-item">
+                            <i class="fas fa-eye blue-txt"></i>
+                            <p><strong>Visibilité</strong> : Une vue claire de l'architecture logicielle.</p>
+                        </div>
+                        <div class="concl-item">
+                            <i class="fas fa-comments green-txt"></i>
+                            <p><strong>Communication</strong> : Un langage commun pour les équipes.</p>
+                        </div>
+                        <div class="concl-item">
+                            <i class="fas fa-check-circle orange-txt"></i>
+                            <p><strong>Qualité</strong> : Réduction des erreurs de conception.</p>
+                        </div>
+                    </div>
+                    <div class="final-quote mt-20">
+                        "La modélisation UML : transformer la complexité en clarté."
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="slide" id="slide-12">
+            <div class="container full-img-layout">
+                <div class="glass-card anim-fade">
+                    <img src="photo_un.png" alt="Description photo 1" class="slide-img">
+                    <p class="img-caption">Diagramme de composants</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="slide" id="slide-13">
+            <div class="container full-img-layout">
+                <div class="glass-card anim-fade">
+                    <img src="photo_deux.png" alt="Description photo 2" class="slide-img">
+                    <p class="img-caption">Diagramme de communication</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bottom-nav">
+        <button class="btn-nav" onclick="prevSlide()">Précédent</button>
+        <div class="nav-status">
+            <div class="dots-group" id="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <span class="page-indicator">1 / 11</span>
+        </div>
+        <button class="btn-nav btn-primary" onclick="nextSlide()">Suivant <i class="fa-solid fa-chevron-right"></i></button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
